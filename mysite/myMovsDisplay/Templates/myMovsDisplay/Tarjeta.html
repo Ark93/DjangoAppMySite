@@ -1,0 +1,11 @@
+<h2>Detalle de tarjeta: {{tarjeta.NumTarjeta}}</h2>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<ul>
+	<li>Numero de Tarjeta:			{{tarjeta.NumTarjeta}}</li>
+	<li>Banco:	{{tarjeta.Banco}}</li>
+	<li>Tipo de Tarjeta:			{{tarjeta.TipoTarjeta}}</li>
+</ul>
+
+<p><a href="/myMovsDisplay/" >Regresar a Index</a></p>

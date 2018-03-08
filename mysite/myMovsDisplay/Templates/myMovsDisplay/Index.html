@@ -1,0 +1,36 @@
+<h1>Index Home</h1>
+
+<h2>Menu</h2>
+<ul>
+	<li>Bancos</li>
+	<li>Tipo de Tarjeta</li>
+	<li><a href="/myMovsDisplay/Tarjeta/">Tarjetas</a></li>
+	<li><a href="/myMovsDisplay/Transacciones/">Transacciones</a></li>
+	<li><a href="/myMovsDisplay/cargarDatos/">Cargar Movimientos desde CSV (Working on)
+	</a></li>
+	<li>Grafica de movimientos</li>
+</ul>
+
+<h3>Tarjetas</h3>
+
+{% if Tarjeta %}
+    <ul>
+    {% for tarjeta in Tarjeta %}
+        <li>{{ tarjeta.id }} Saldo: 0</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay Tarjetas.</p>
+{% endif %}
+
+<h3>Ultimas Transacciones</h3>
+
+{% if Transacciones %}
+    <ul>
+    {% for transaccion in Transacciones %}
+        <li><a href="/myMovsDisplay/{{ transaccion.id }}/">{{ transaccion.fecha }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay Transacciones.</p>
+{% endif %}

@@ -4,9 +4,15 @@ from . import views
 app_name='myMovsDisplay'
 urlpatterns = [
 	#ex /myMovsDisplay/
-	path('',views.index, name='index'),
+	path('',views.IndexView.as_view(), name='index'),
 	#ex /myMovsDisplay/1/
-	path('<int:transaccion_id>/',views.detalles, name='detalles'),
+	path('<int:pk>/',views.DetailView.as_view(), name='detalles'),
+	#
+	path('Tarjeta/',views.TarjetaView.as_view(), name='tarjeta'),
+	#
+	path('Tarjeta/<int:pk>/',views.TarjetaDetailView.as_view(), name='tarjeta'),
+	#
+	path('Transacciones/',views.TransactionsView.as_view(), name='transacciones'),
 	#
 	path('cargarDatos/',views.cargarDatos, name='cargarDatos')
 ]

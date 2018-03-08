@@ -1,0 +1,22 @@
+<h3>Tarjetas</h3>
+
+{% if object_list %}
+	<table style="width=80%">
+		<tr>
+			<th>Numero de Tarjeta</th>
+			<th>Tipo de Tarjeta</th>
+			<th>Banco</th>
+		</tr>
+		{% for transaccion in object_list %}
+		<tr>			
+			<td><a href="/myMovsDisplay/Tarjeta/{ tarjeta.id }}/">{{ tarjeta.NumTarjeta }}</a></td>
+			<td>{{ tarjeta.TipoTarjeta }}</td>
+			<td>{{ tarjeta.Banco }}</td>
+		</tr>
+		{% endfor %}
+	</table>	
+{% else %}
+    <p>No hay Transacciones.</p>
+{% endif %}
+
+<p><a href="/myMovsDisplay/" >Regresar a Index</a></p>

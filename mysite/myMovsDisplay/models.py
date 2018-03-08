@@ -27,4 +27,4 @@ class Transacciones(models.Model):
 	saldo = models.CharField(max_length=30)
 	NumTarjeta = models.ForeignKey(Tarjeta, on_delete=models.CASCADE)
 	def __str__(self):
-		return ("%s %s" % (self.fecha,self.cargo))
+		return ("%s cargo: %s abono: %s" % (self.fecha,self.cargo,self.abono))
