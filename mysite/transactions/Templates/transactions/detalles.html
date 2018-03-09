@@ -1,0 +1,14 @@
+<h1>{{object.fecha}}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<ul>
+	<li>Fecha:			{{object.fecha}}</li>
+	<li>Descripción:	{{object.descripcion}}</li>
+	<li>Cargo:			{{object.cargo}}</li>
+	<li>Abono:			{{object.abono}}</li>
+	<li>Saldo:			{{object.saldo}}</li>
+	<li>Tarjeta:		{{object.NumTarjeta}}</li>
+</ul>
+
+<p><a href="/myMovsDisplay/" >Regresar a Index</a></p>

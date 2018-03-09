@@ -7,9 +7,9 @@
 			<th>Tipo de Tarjeta</th>
 			<th>Banco</th>
 		</tr>
-		{% for transaccion in object_list %}
+		{% for tarjeta in object_list %}
 		<tr>			
-			<td><a href="/myMovsDisplay/Tarjeta/{ tarjeta.id }}/">{{ tarjeta.NumTarjeta }}</a></td>
+			<td><a href="/myMovsDisplay/Tarjeta/{{ tarjeta.pk }}/">{{ tarjeta.NumTarjeta }}</a></td>
 			<td>{{ tarjeta.TipoTarjeta }}</td>
 			<td>{{ tarjeta.Banco }}</td>
 		</tr>

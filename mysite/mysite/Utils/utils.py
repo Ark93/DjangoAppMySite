@@ -1,4 +1,5 @@
-from myMovsDisplay.models import Tarjeta,Transacciones
+from myMovsDisplay.models import Tarjeta
+from transactions.models import Transaccion
 from  time import strftime, strptime
 from datetime import date
 

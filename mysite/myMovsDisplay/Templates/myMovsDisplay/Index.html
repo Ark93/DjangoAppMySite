@@ -5,8 +5,8 @@
 	<li>Bancos</li>
 	<li>Tipo de Tarjeta</li>
 	<li><a href="/myMovsDisplay/Tarjeta/">Tarjetas</a></li>
-	<li><a href="/myMovsDisplay/Transacciones/">Transacciones</a></li>
-	<li><a href="/myMovsDisplay/cargarDatos/">Cargar Movimientos desde CSV (Working on)
+	<li><a href="/transactions/">Transacciones</a></li>
+	<li><a href="/transactions/SeleccionarTarjeta/">Cargar Movimientos desde CSV (Working on, add list of files to upload for that card)
 	</a></li>
 	<li>Grafica de movimientos</li>
 </ul>
@@ -28,7 +28,7 @@
 {% if Transacciones %}
     <ul>
     {% for transaccion in Transacciones %}
-        <li><a href="/myMovsDisplay/{{ transaccion.id }}/">{{ transaccion.fecha }}</a></li>
+        <li><a href="/transactions/{{ transaccion.id }}/">{{ transaccion.fecha }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

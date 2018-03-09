@@ -18,13 +18,3 @@ class Tarjeta(models.Model):
 	TipoTarjeta = models.ForeignKey(TipoTarjeta, on_delete=models.CASCADE)
 	def __str__(self):
 		return self.NumTarjeta
-
-class Transacciones(models.Model):
-	fecha = models.DateTimeField('fecha de cargo')
-	descripcion = models.CharField(max_length=150)
-	cargo = models.FloatField(default=0.0)
-	abono = models.FloatField(default=0.0)
-	saldo = models.CharField(max_length=30)
-	NumTarjeta = models.ForeignKey(Tarjeta, on_delete=models.CASCADE)
-	def __str__(self):
-		return ("%s cargo: %s abono: %s" % (self.fecha,self.cargo,self.abono))

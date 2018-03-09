@@ -13,7 +13,7 @@ Use Cluster model with Cosine distance to get similars and then use mutual infor
 		{% for transaccion in object_list %}
 		<tr>			
 			<td>{{ transaccion.fecha }}</td>
-			<td><a href="/myMovsDisplay/{{ transaccion.id }}/">{{ transaccion.descripcion }}</a></td>
+			<td><a href="/transactions/{{ transaccion.id }}/">{{ transaccion.descripcion }}</a></td>
 			<td>{{ transaccion.cargo }}</td>
 			<td>{{ transaccion.abono }}</td>
 			<td><a href="/myMovsDisplay/Tarjeta/{{ transaccion.NumTarjeta.pk }}/">{{ transaccion.NumTarjeta }}</a></td>

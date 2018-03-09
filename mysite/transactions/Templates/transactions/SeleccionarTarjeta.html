@@ -1,0 +1,12 @@
+<h3>Selecciona la Tarjeta</h3>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'transactions:cargarDatos'%}" method="post">
+{% csrf_token %}
+{% for tarjeta_ in object_list %}
+    <input type="radio" name="tarjeta" id="tarjeta{{ forloop.counter }}" value="{{ tarjeta_.pk }}" />
+    <label for="Tarjeta{{ forloop.counter }}">{{ tarjeta_.NumTarjeta }}</label><br />
+{% endfor %}
+<input type="submit" value="Cargar" />
+</form>
