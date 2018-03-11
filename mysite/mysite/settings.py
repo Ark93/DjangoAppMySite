@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'graphics.apps.GraphicsConfig',
     'transactions.apps.TransactionsConfig',
     'myMovsDisplay.apps.MymovsdisplayConfig',
     'polls.apps.PollsConfig',
