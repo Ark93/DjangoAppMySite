@@ -3,5 +3,6 @@ from . import views
 
 app_name = 'graphics'
 urlpatterns = [
-    path('', views.showimage, name='index'),
+	# /graphics/
+    path('', views.Graph.as_view(), name='index'),
 ]
