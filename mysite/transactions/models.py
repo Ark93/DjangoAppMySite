@@ -12,4 +12,4 @@ class Transaccion(models.Model):
 	def __str__(self):
 		return ("%s cargo: %s abono: %s" % (self.fecha,self.cargo,self.abono))
 	class Meta:
-		unique_together = ["fecha","descripcion","cargo","abono"]
+		unique_together = ["fecha","descripcion","cargo","abono","saldo"]

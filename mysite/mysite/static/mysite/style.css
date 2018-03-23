@@ -1,0 +1,98 @@
+body {
+    background-image: url("images/vertical-waves.png");
+    height: 100%;
+    margin-right: 15px;
+}
+
+#header{
+	border: 1px solid black;
+	background-color:  #8ca3a3;
+	padding: 0px;
+}
+
+#header h2{ 
+	font-family: "Georgia";
+	font-size: 30px;
+	margin-left: 30px;
+}
+
+.main{
+	height: 100vh;
+	overflow: auto;
+	background-color: #484f4f;
+}
+
+nav {
+	float: left;
+	height: 100%;
+	width: 18%;
+	overflow: auto;
+	background-color: #484f4f;
+}
+nav a{
+	display: block;
+	color: white;
+	padding: 5px 16px;
+	text-decoration: none;
+}
+
+nav a:hover{
+	color:lightblue;
+}
+
+.sections{
+	float: left;
+	width: 82%;
+	height: 100%;
+	overflow: auto;	
+	background-color: white;
+	background-image: url("images/vertical-waves.png");
+}
+
+section{
+	border: 0px solid black;
+	margin: : 0px;
+}
+
+section h3{
+	background-color: lightgray;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+table{
+	border-collapse: collapse;
+	position: inherit;
+	margin-top: 10px;
+	padding-bottom: 20px;
+}
+
+table th{
+	background-color: #563f46;
+	color: #c8c3cc;
+}
+
+table tr{
+	background-color:  	#F8F8FF;
+}
+
+table tr:nth-child(even) {
+	background-color:  	#c8c3cc;
+}
+
+table th,td{
+	border-bottom: 1px solid #ddd;
+	border-collapse: collapse;
+}
+
+a,li,p,td {
+	font-size: 20px;
+	margin: 0px 5px;
+	
+}
+
+#footer{
+	clear:both;
+	background-color: lightgrey;
+}

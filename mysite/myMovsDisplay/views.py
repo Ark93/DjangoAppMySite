@@ -15,7 +15,7 @@ class IndexView(generic.TemplateView):
 		"""Return the context dictionary for multiple models. To reference one
 		use the key as the object_list"""
 		context = super(IndexView, self).get_context_data(**kwargs)
-		context["Transacciones"] = utils.formatTransactionsDate(Transaccion.objects.order_by('-fecha')[:5])
+		context["Transacciones"] = utils.formatTransactionsDate(Transaccion.objects.order_by('-fecha')[:10])
 		context["Tarjeta"] = Tarjeta.objects.all()[:5]
 		return context
 

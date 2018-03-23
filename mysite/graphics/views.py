@@ -20,21 +20,18 @@ class Graph(generic.TemplateView):
         fechas_x_ax = [t.fecha for t in data_]
         
         gastos = go.Scatter(x=fechas_x_ax, y= gastos_y_ax, marker={'color': 'red', 'symbol': 0, 'size': "10"},
-                            mode="lines+markers",  name='Gastos')
+                            mode="markers",  name='Gastos')
 
 
         x = [-2,0,4,6,7]
         y = [q**2-q+3 for q in x]
-        #trace1 = go.Scatter(x=x, y=y, marker={'color': 'red', 'symbol': 104, 'size': "10"},
-                            #mode="lines",  name='1st Trace')
+        trace1 = go.Scatter(x=x, y=y, marker={'color': 'red', 'symbol': 104, 'size': "10"},
+                            mode="lines",  name='1st Trace')
         data = go.Data([gastos])
-        layout=go.Layout(title="Gastos", xaxis={'title':'Fecha'}, yaxis={'title':'Gasto'})
+        layout=go.Layout(title="Todos los Gastos", xaxis={'title':'Fecha'}, yaxis={'title':'Gasto'})
         figure=go.Figure(data=data,layout=layout)
         div = opy.plot(figure, auto_open=False, output_type='div')
 
         context['graph'] = div
 
         return context
-
-
-# Create your views here.
