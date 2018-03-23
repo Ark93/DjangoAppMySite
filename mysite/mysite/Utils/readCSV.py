@@ -6,6 +6,7 @@ from myMovsDisplay.models import Tarjeta
 from transactions.models import Transaccion
 from django.shortcuts import get_object_or_404
 from django.db import IntegrityError
+import time
 
 def readFile(pk_):
 	q = Tarjeta.objects.get(pk=pk_)
@@ -31,11 +32,12 @@ def readFile(pk_):
 					except IntegrityError as e:
    						print(e.args[0])
    						print(t.fecha + '' + t.descripcion)
-   						rejected.add(row)   							
+   						rejected.append(row)   							
 			os.rename(path + '/' + file_, path + '/Cargados/' + str(strftime("%Y-%m-%d_%H-%M-%S")) + ".csv")
+			time.sleep(5)
 	#if any row is rejected, a new file is generated with rejected rows
 	if len(rejected) > 0:
-		with open(path + '/' + 'rejected.csv') as f:
+		with open(path + '/' + 'rejected.csv',"w+") as f:
 				writer = csv.writer(f)
 				for row in rejected:
 					writer.writerow([row[0],row[1],row[2],row[3],row[4]])

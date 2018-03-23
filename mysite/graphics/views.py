@@ -16,21 +16,16 @@ class Graph(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super(Graph, self).get_context_data(**kwargs)
         data_ = Transaccion.objects.order_by('fecha')
+        
         gastos_y_ax = [(t.cargo  + t.abono) for t in data_]
         fechas_x_ax = [t.fecha for t in data_]
         
         gastos = go.Scatter(x=fechas_x_ax, y= gastos_y_ax, marker={'color': 'red', 'symbol': 0, 'size': "10"},
                             mode="markers",  name='Gastos')
-
-
-        x = [-2,0,4,6,7]
-        y = [q**2-q+3 for q in x]
-        trace1 = go.Scatter(x=x, y=y, marker={'color': 'red', 'symbol': 104, 'size': "10"},
-                            mode="lines",  name='1st Trace')
         data = go.Data([gastos])
-        layout=go.Layout(title="Todos los Gastos", xaxis={'title':'Fecha'}, yaxis={'title':'Gasto'})
+        layout=go.Layout(title="Todos los Gastos", xaxis={'title':'Fecha'}, yaxis={'title':'Gasto'}, hovermode = 'closest')
         figure=go.Figure(data=data,layout=layout)
-        div = opy.plot(figure, auto_open=False, output_type='div')
+        div = opy.plot(figure, auto_open=True, output_type='div')
 
         context['graph'] = div
 

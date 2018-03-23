@@ -3,16 +3,15 @@ from .models import Transaccion
 from django.views import generic
 from myMovsDisplay.models import Tarjeta
 from mysite.Utils import utils,readCSV
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponse
 
 
 # Create your views here.
-class TransactionsView(generic.TemplateView):
+class TransactionsView(generic.ListView):
 	template_name="transactions/Transacciones.html"
 	def get_queryset(self):
 		"""Return the last five published questions."""
 		return utils.formatTransactionsDate(Transaccion.objects.order_by('-fecha'))
-
 
 class DetailView(generic.DetailView):
 	model = Transaccion
@@ -29,13 +28,13 @@ def cargarDatos(request):
 	count = readCSV.readFile(pk_)
 	return HttpResponse("Se cargaron %s records para tarjeta %s" % (count,Tarjeta.objects.get(pk=pk_)))
 
-def Filter(request):
-	for key in request.POST:
-			print(key)
-			value = request.POST[key]
-			print(value)
-	
-	
+class cargarDatos_(generic.TemplateView):
+	template_name="transactions/DatosCargados.html"
+	#q = Tarjeta.objects.get(pk=request.POST['tarjeta'])
+	#print(q)
+	context_object_name = 'context'
 
-class FilterView(generic.ListView):
-	template_name="transactions/TransaccionesFilt.html"
+	def get_context_data(self,**kwargs):
+		context = super(IndexView, self).get_context_data(**kwargs)
+		context["Tarjeta"] = Tarjeta.objects.all()[:5]#
+		return context
