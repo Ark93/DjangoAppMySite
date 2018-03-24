@@ -31,9 +31,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_extensions',
     'graphics.apps.GraphicsConfig',
     'transactions.apps.TransactionsConfig',
     'myMovsDisplay.apps.MymovsdisplayConfig',
+    'ipython.apps.IpythonConfig',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
